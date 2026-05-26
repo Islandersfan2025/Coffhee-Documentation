@@ -102,63 +102,91 @@
             <h4 class="mb-4">ROOT_DIR</h4>
             <div class="nav flex-column">
                 <a class="nav-link" href="#overview">> OVERVIEW.txt</a>
-                <a class="nav-link" href="#erc3475">> ERC3475_SPEC.md</a>
-                <a class="nav-link" href="#zama">> FHENIX_INTEGRATION.sh</a>
+                <a class="nav-link" href="#schrodinger">> SCHRODINGER_HOOK.sys</a>
+                <a class="nav-link" href="#erwa">> E_RWA_MARKETPLACE.md</a>
+                <a class="nav-link" href="#eusd">> EUSD_MINT_PROTOCOL.conf</a>
+                <a class="nav-link" href="#fhe">> FHE_INTEGRATION.sh</a>
                 <a class="nav-link" href="#security">> SECURITY_PROTOCOL.cfg</a>
             </div>
         </nav>
 
         <main class="col-md-9 main-content">
             <div class="terminal-card">
+                
                 <section id="overview">
                     <h1>System Overview</h1>
-                    <p class="mt-3">Coffhee's bond marketplace is a decentralized credit infrastructure designed to bridge traditional fixed-income instruments with on-chain liquidity using <strong>Fully Homomorphic Encryption (FHE)</strong>.</p>
+                    <p class="mt-3">Coffhee's protocol acts as a secure, decentralized credit and liquidity infrastructure designed to trade tokenized debt instruments, fixed-income yields, and stablecoins. By utilizing an <strong>encrypted Automated Market Maker (eAMM)</strong> deployment combined with state-of-the-art privacy primitives, the system bridges institutional assets with public ecosystems without sacrificing transaction confidentiality.</p>
                     <div class="highlight-box">
                         STATUS: Operational<br>
-                        KERNEL: Powered By- Fhenix v0.7.1<br>
-                        ARCH: Multi-Layer Bond Architecture, Automated Marketmaker<br>
-                        CHAIN: Arbitrum, Robinhood Chain
+                        CORE ENGINE: Encrypted Automated Market Maker (eAMM)<br>
+                        ARCHITECTURE: Uniswap v4 Hook Integration & Multi-Token Fixed-Income Protocols<br>
+                        PRIMARY LEDGER: Public EVM Ecosystem / Layer-2 Scaling Environments
                     </div>
                 </section>
 
                 <div class="section-divider"></div>
 
-                <section id="erc3475">
-                    <h2>ERC-3475: The Multi-Token Standard</h2>
-                    <p>Unlike standard tokens, ERC-3475 allows for complex debt structures. Every bond is defined by a <code>Class</code> and a <code>Nonce</code>.</p>
+                <section id="schrodinger">
+                    <h2>Schrödinger Hook: Uniswap v4 Architecture</h2>
+                    <p>Liquidity on Coffhee is managed through custom-engineered <strong>Uniswap v4 Hooks</strong> known as the <em>Schrödinger Hook UI framework</em>. Traditional AMM pools broadcast exact order sizing, execution parameters, and final pool compositions to public mempools, exposing liquidity providers to toxic MEV and algorithmic exploitation.</p>
+                    <p>The Schrödinger Hook interceptor completely modifies the pool lifecycle by injecting privacy-preserving execution barriers directly into the Uniswap v4 transaction stream:</p>
                     <ul>
-                        <li><strong>Class:</strong> Defines the bond issuer and series.</li>
-                        <li><strong>Nonce:</strong> Defines specific maturity dates and coupon cycles.</li>
+                        <li><strong>Before-Swap Hook Callbacks:</strong> Intercepts inbound trades to lock token balances inside a ciphertext superposition state, preventing sandwich attacks by obscuring parameters.</li>
+                        <li><strong>Dynamic Volatility & Spread Adjustments:</strong> Rather than relying entirely on deterministic pricing paths, the hook queries internal encrypted state values to calculate tracking slip and fee weights dynamically.</li>
+                        <li><strong>After-Swap State Consolidation:</strong> Settles public accounting changes cleanly on the parent engine contract while maintaining individual pool asset allocations entirely shielded.</li>
                     </ul>
-                    
                 </section>
 
                 <div class="section-divider"></div>
 
-                <section id="zama">
-                    <h2>FHENIX Integration</h2>
-                    <p>Standard blockchains are transparent. To protect institutional trade secrets and individual net worth, we've integrated <strong>Fhenix</strong>.</p>
-                    <h3>The Encryption Workflow</h3>
-                    <p>By utilizing Fhenix's <code>fhe.sol</code> contract, we enable <strong>ERC 1155 tokens are listed and used to hold the bond tokens.</strong>:</p>
+                <section id="erwa">
+                    <h2>eRWAs: Encrypted Real World Assets</h2>
+                    <p>Coffhee converts off-chain yield notes, debt portfolios, and commercial corporate bonds into <strong>Encrypted Real World Assets (eRWAs)</strong>. Utilizing highly programmable asset criteria, these fixed-income primitives ensure compliance and asset security on-chain.</p>
+                    <p>The data structures are built directly on top of specialized multi-token parameters where every listed asset series is governed by separate tracking criteria:</p>
+                    <ul>
+                        <li><strong>Class Specification:</strong> Governs overarching corporate token identification, financial compliance guidelines, collateral rules, and the asset issuer parameters.</li>
+                        <li><strong>Nonce Specifications:</strong> Map precise micro-parameters to the specific asset series, including exact maturity lock dates, discounted purchase coefficients, and yield payouts.</li>
+                    </ul>
+                    <p>Through this standard, eRWA holdings are safely wrappered into secure storage vectors where portfolio positions remain private to standard blockchain explorers, but perfectly accessible to approved participants.</p>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <section id="eusd">
+                    <h2>eUSD Stablecoin Minting Protocol</h2>
+                    <p>The <strong>eUSD Stablecoin</strong> functions as the foundational encrypted settlement unit inside the Coffhee eAMM routing landscape. It provides stable liquidity pools a secure peg asset that pairs natively against shielded RWA positions.</p>
+                    <p>Minters lock institutional-grade, liquid stablecoins (such as USDC, USDT, or USD.e) directly into the protocol's issuance vaults. The system tracks deposit positions and outputs a matching nominal value of eUSD tokens:</p>
                     <div class="highlight-box">
-                        1. <strong>Input:</strong> ERC 1155 balance is encrypted.<br>
-                        2. <strong>Process:</strong> Only the token owner can decrypt.<br>
-                        3. <strong>Result:</strong> Confidential information will remain private.
+                        [Approved Collateral Deposit] ──&gt; (Vault Smart Contract Isolation) ──&gt; [eUSD Shielded Token Issuance]
                     </div>
-                    
-                    <p>This ensures that bond holdings, volume, and transaction history remain mathematically private while staying verifiable on the public ledger.</p>
+                    <p>The total locked value inside the vaults provides ironclad, fully backed solvency verification on-chain, while individual user collateral types, vault allocations, and transactional velocities are fully obscured using encrypted arithmetic layers.</p>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <section id="fhe">
+                    <h2>Core FHE Integration Framework</h2>
+                    <p>Standard networks operate completely transparently. To safeguard institutional positions, sensitive corporate balance sheets, and individual portfolio data, Coffhee utilizes native <strong>Fully Homomorphic Encryption (FHE)</strong> algorithms running directly inside specialized cryptographic execution environments.</p>
+                    <h3>The Shielded Asset Workflow</h3>
+                    <p>By shifting calculation primitives to work on ciphertext natively, the asset lifecycle securely manages ERC-1155 and ERC-20 interactions without revealing underlying values:</p>
+                    <div class="highlight-box">
+                        1. <strong>Input Matrix:</strong> Inbound token allocations are immediately wrapped and converted into encrypted mathematical structures.<br>
+                        2. <strong>Homomorphic Processing:</strong> Swap functions, additions, subtraction parameters, and balance verifications execute entirely over ciphertext variables.<br>
+                        3. <strong>Encrypted Result:</strong> The storage state updates securely. Only the verified wallet owner possesses the specific keys needed to read or decrypt the records.
+                    </div>
+                    <p>This allows volume verification, liquidity depths, and interest accruals to be mathematically proved on the public ledger while preventing unauthorized tracking.</p>
                 </section>
 
                 <div class="section-divider"></div>
 
                 <section id="security">
                     <h2>Security Protocols</h2>
-                    <p>Access control is maintained via <strong>Signed Re-encryption Requests</strong>. Only the legitimate owner of a wallet can generate the EIP-712 signature required to view their private bond balance.</p>
-                    <code>$ decrypt --asset bond_01 --auth eip712_sig</code>
+                    <p>Access control over sensitive state metrics is strictly maintained via <strong>Signed Re-encryption Requests</strong>. Only the authenticated owner of an external web3 account can generate the proper EIP-712 structured cryptographic signatures required to view their private eRWA and eUSD balances.</p>
+                    <code>$ decrypt --asset eRWA_bond_01 --auth eip712_sig</code>
                 </section>
                 
                 <footer class="mt-5 pt-3 border-top border-secondary text-secondary">
-                    <small>COFFHEE_DOCS_REV_2026.01.06 // END_OF_FILE</small>
+                    <small>COFFHEE_DOCS_REV_2026.05.26 // END_OF_FILE</small>
                 </footer>
             </div>
         </main>
@@ -178,11 +206,4 @@
 </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
